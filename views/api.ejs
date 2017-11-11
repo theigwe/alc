@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <% include partials/core_styles %>
+    </head>
+    <body>
+        <% include partials/navigation %>
+
+        <div class="w3-section">
+            <div class="w3-content" style="max-width: 1000px;">
+                <h1>ALC 2.0 ASSESSMENT API</h1>
+                <div class="w3-padding">
+                    <p>
+                        Using this API endpoints, you can create, read, update and delete student records.
+                        This is designed for assessment purpose. There is no authentication
+                        required to use the endpoints; as this was not designed for production purposes.
+                    </p>
+                    <p>Get the project source code on <a href="https://github.com/sammyni/alc" target="_blank">Github</a>. To run the app, you will need <a href="https://www.mongodb.com/" target="_blank">MongoDB</a> on your machine.</p>
+                </div>
+                <!-- <hr/> -->
+                <div class="w3-container">
+                    <div class="w3-card-4 w3-margin-bottom">
+                        <div class="w3-row-padding">
+                            <div class="w3-half">
+                                <div class="w3-padding">
+                                    <h4 class="w3-left-align">List All Students</h4>
+                                    <p>Use the list method endpoint to get the list of all students.</p>
+                                    <p><b>URL:</b> /api/student/list/</p>
+                                    <p><b>Method:</b> GET</p>
+                                </div>
+                            </div>
+                            <div class="w3-half">
+                                <p>Response: 200 OK, application/json</p>
+<pre class="json_response">
+{
+    "status":200,
+    "data":{
+        "number":n,
+        "students":
+        [
+            {
+                "reg_number" : "123456",
+                "first_name" : "Ndubuisi",
+                "middle_name" : "Igwe",
+                "last_name" : "Samuel",
+                "age" : "29",
+                "level" : "Graduate",
+                "department" : "Engineering"
+            },
+            {
+                ...
+            }
+        ]
+    }
+}
+</pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-card-4 w3-margin-bottom">
+                        <div class="w3-row-padding">
+                            <div class="w3-half">
+                                <div class="w3-padding">
+                                    <h4 class="w3-left-align">Create Profile</h4>
+                                    <p>With the create method, you can add new student to the existing list.</p>
+                                    <p><b>URL:</b> /api/student/create</p>
+                                    <p><b>Method:</b> POST</p>
+                                    <ul>
+                                        <li><b>&dollar;reg_number</b> Unique registration number.</li>
+                                        <li><b>&dollar;first_name</b> Student&apos;s given name.</li>
+                                        <li><b>&dollar;middle_name</b> Student&apos;s middle name.</li>
+                                        <li><b>&dollar;last_name</b> Student&apos;s family name.</li>
+                                        <li><b>&dollar;age</b> Student&apos;s age in digits (eg. 18).</li>
+                                        <li><b>&dollar;level</b> Student&apos;s class or level.</li>
+                                        <li><b>&dollar;department</b> Student&apos;s department.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w3-half">
+                                <div class="w3-padding">
+                                    <p>Response: 200 OK, application/json</p>
+<pre class="json_response">
+{
+    "status":200,
+    "data":
+    {
+        "reg_number" : "123456",
+        "first_name" : "Ndubuisi",
+        "middle_name" : "Igwe",
+        "last_name" : "Samuel",
+        "age" : "29",
+        "level" : "Graduate",
+        "department" : "Engineering"
+    }
+}
+</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-card-4 w3-margin-bottom">
+                        <div class="w3-row-padding">
+
+                            <div class="w3-half">
+                                <div class="w3-padding">
+                                    <h4 class="w3-left-align">View Student</h4>
+                                    <p>With the view method, you can read the record of single student using the student&apos;s registration number.</p>
+                                    <p><b>URL:</b> /api/student/view/$reg</p>
+                                    <p><b>Method:</b> GET</p>
+                                    <ul>
+                                        <li><b>&dollar;reg</b> Unique registration number.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w3-half">
+                                <div class="w3-padding">
+                                    <p>Response: 200 OK, application/json</p>
+<pre class="json_response">
+{
+    "status":200,
+    "data":
+    {
+        "reg_number" : "123456",
+        "first_name" : "Ndubuisi",
+        "middle_name" : "Igwe",
+        "last_name" : "Samuel",
+        "age" : "29",
+        "level" : "Graduate",
+        "department" : "Engineering"
+    }
+}
+</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-card-4 w3-margin-bottom">
+                        <div class="w3-row-padding">
+                            <div class="w3-half">
+                                <div class="w3-padding">
+                                    <h4 class="w3-left-align">Update Profile</h4>
+                                    <p>This method updates existing student&apos;s record.</p>
+                                    <p><b>URL:</b> /api/student/update</p>
+                                    <p><b>Method:</b> POST</p>
+                                    <ul>
+                                        <li><b>&dollar;reg_number</b> Unique registration number.</li>
+                                        <li><b>&dollar;first_name</b> Student&apos;s given name.</li>
+                                        <li><b>&dollar;middle_name</b> Student&apos;s middle name.</li>
+                                        <li><b>&dollar;last_name</b> Student&apos;s family name.</li>
+                                        <li><b>&dollar;age</b> Student&apos;s age in digits (eg. 18).</li>
+                                        <li><b>&dollar;level</b> Student&apos;s class or level.</li>
+                                        <li><b>&dollar;department</b> Student&apos;s department.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w3-half">
+                                <div class="w3-padding">
+                                    <p>Response: 200 OK, application/json</p>
+<pre class="json_response">
+{
+    "status":200,
+    "data":
+    {
+        "reg_number" : "123456",
+        "first_name" : "Ndubuisi",
+        "middle_name" : "Igwe",
+        "last_name" : "Samuel",
+        "age" : "29",
+        "level" : "Graduate",
+        "department" : "Engineering"
+    }
+}
+</pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w3-card-4 w3-margin-bottom">
+                        <div class="w3-row-padding">
+                            <div class="w3-half">
+                                <div class="w3-padding">
+                                    <h4 class="w3-left-align">Delete Profile</h4>
+                                    <p>With the delete method, you can remove student&apos;s profile permanently.</p>
+                                    <p><b>URL:</b> /api/student/delete/$reg</p>
+                                    <p><b>Method:</b> GET</p>
+                                    <ul>
+                                        <li><b>&dollar;reg</b> Unique registration number.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w3-half">
+                                <div class="w3-padding">
+                                    <p>Response: 200 OK, application/json</p>
+                                    <pre class="json_response">{ "status":200, "data": ""} </pre>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </dvi>
+        </div>
+        <% include partials/core_scripts %>
+    </body>
+</html>

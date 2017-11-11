@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <% include partials/core_styles %>
+    </head>
+    <body>
+        <% include partials/navigation %>
+        <div class="w3-container">
+
+            <div class="w3-content w3-white w3-round" style="max-width: 900px">
+
+                <div class="w3-section w3-border-bottom">
+                    <div class="w3-bar">
+                        <div class="w3-bar-item"><span class="w3-large w3-text-green">LIST OF STUDENTS</span></div>
+                        <div class="w3-bar-item w3-right"><span class="w3-text-grey">
+                            <% if(students.length > 1){ %>
+                                 <%= students.length %> STUDENTS
+                            <% } else{ %>
+                                <%= students.length %> STUDENT
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+                <% if(students.length > 0){ %>
+                    <ul class="w3-container">
+                        <li class="w3-bar w3-border-bottom">
+                            <div class="w3-bar-item" style="width: 100px"><b>Reg. No.</B></div>
+                            <div class="w3-bar-item" style="width: 150px"><b>Name</b></div>
+                            <div class="w3-bar-item w3-center"><b>Level (Class)</b></div>
+                            <div class="w3-bar-item w3-right w3-hide-small">
+                                <b>Options</b>
+                            </div>
+                        </li>
+                    <% students.forEach((std)=>{ %>
+                        <% if(std.reg_number) { %>
+                            <li class="w3-bar w3-border-bottom w3-hover-light-grey">
+                                <div class="w3-bar-item" style="width: 100px"><%= std.reg_number %></div>
+                                <div class="w3-bar-item" style="width: 150px">
+                                    <%= std.first_name.toUpperCase() %> <br>
+                                    <span class="w3-text-grey"><%= std.last_name %></span>
+                                </div>
+                                <div class="w3-bar-item w3-center"><%= std.level %></div>
+                                <div class="w3-bar-item w3-right w3-hide-small">
+                                    <a href="<%= "/view/" + std.reg_number %>" class="w3-button">View</a>
+                                    <a href="<%= "/update/" + std.reg_number %>" class="w3-button"><i class="fa fa-edit"></i></a>
+                                    <button class="w3-button w3-text-red" data-delete="<%= std.reg_number %>" ><i class="fa fa-trash"></i></button>
+                                </div>
+                                <div class="w3-bar-item w3-right w3-hide-large w3-hide-medium">
+                                    <span class="w3-button"><i class="fa fa-angle-down"></i></span>
+                                </div>
+                            </li>
+                        <% } %>
+                    <% }); %>
+                    </ul>
+                <% } else{ %>
+                    <div class="w3-container">
+                        <i>No record found!</i>
+                        <a href="/add" class="w3-btn w3-green w3-hover-green w3-right">Add Student</a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+        <% include partials/core_scripts %>
+        <script type="text/javascript" src="/assets/js/assets.js.delete.js"></script>
+    </body>
+</html>

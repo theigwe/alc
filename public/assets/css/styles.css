@@ -1,0 +1,31 @@
+html{}
+body{background-color: #ddd; font-family: 'Source Sans Pro', 'Open Sans';font-size: 14; text-align: justify;}
+h1{font-size: 2rem; font-family: Roboto, 'Open Sans'}
+h1,h2,h3,h4,h5,h6{color: #4caf50; font-weight: 700; text-align: center;}
+p{}
+
+nav{font-weight: 800;}
+button.menu{padding: 5px 10px; background-color: transparent; border: none; color: #ffffff;}
+button.menu:hover{cursor: pointer; color: #dcd7d7;}
+
+.w3-sidebar{display: none;}
+#mainMenu{
+    top: 0;
+    z-index: 999;
+}
+
+form{ max-width: 500px!important; }
+form label.hide{ display: none; color: #009688; font-size: 1.1em;}
+
+form input.err{border-color: #ff0000;}
+
+form .info { color: #009688; }
+form .info .err{color: #ff0000; }
+
+form .errorBox .message{ display: none; }
+
+pre.json_response{
+    border: 1px solid #ccc; border-radius: 10px; padding: 20px 15px; background-color: #514e4e; color: #fff!important; overflow-x: auto;
+    line-height: 1.2em; font-size: 0.9em; font-family: font-family: "Share Tech Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <% include partials/core_styles %>
+    </head>
+    <body>
+        <% include partials/navigation %>
+
+        <div class="w3-section">
+            <div class="w3-container">
+                <h4>Add New Student</h4>
+                <hr/>
+                <form class="w3-content" action="" method="post" id="add_student_form">
+                    <div class="w3-section">
+                        <label class="hide w3-animate-zoom">First Name</label>
+                        <input class="w3-input" type="text" name="first_name" value="" placeholder="First Name"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+                    <div class="w3-section">
+                        <label class="hide">Middle Name</label>
+                        <input class="w3-input" type="text" name="middle_name" value="" placeholder="Middle Name"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+                    <div class="w3-section">
+                        <label class="hide">Last Name</label>
+                        <input class="w3-input" type="text" name="last_name" value="" placeholder="Last Name"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+
+                    <div class="w3-section">
+                        <label class="hide">Age</label>
+                        <input class="w3-input" type="number" name="age" value="" placeholder="Age"/>
+                        <div class="info">
+                            <span class="def">Age in digits (ex. 18)</span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+
+                    <div class="w3-section">
+                        <label class="hide">Reg. Number</label>
+                        <input class="w3-input" type="text" name="reg_number" value="" placeholder="Reg. Number"/>
+                        <div class="info">
+                            <span class="def">Unique six (6) digits.</span>
+                            <span class="err"></span>
+                        </div>
+
+                    </div>
+                    <div class="w3-section">
+                        <label class="hide">Class (Level)</label>
+                        <input class="w3-input" type="text" name="level" value="" placeholder="Class (Level)"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+                    <div class="w3-section">
+                        <label class="hide">Department</label>
+                        <input class="w3-input" type="text" name="department" value="" placeholder="department"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+                    <div class="w3-section w3-right-align">
+                        <button class="w3-btn w3-block w3-green w3-hover-green w3-hover-opacity" type="submit" name="add_new_student"><i class="fa fa-plus"></i> Add</button>
+                    </div>
+
+                    <div class="w3-section">
+                        <div class="w3-card-4 w3-white errorBox">
+                            <div class="w3-padding w3-text-red w3-small message"> </div>
+                        </div>
+                    </div>
+                </form>
+                <hr />
+                <div class="w3-padding-24 w3-center">
+                    <a href="/" class="w3-btn w3-blue w3-hover-blue w3-margin-right"><i class="fa fa-home"></i> Home</a>
+                    <a href="/list" class="w3-btn w3-blue w3-hover-blue w3-margin-left">List Students</a>
+                </div>
+            </div>
+        </div>
+        <% include partials/core_scripts %>
+        <script type="text/javascript" src="/assets/js/assets.js.add.js"></script>
+    </body>
+</html>

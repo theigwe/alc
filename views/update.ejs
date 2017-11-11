@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <% include partials/core_styles %>
+    </head>
+    <body>
+        <% include partials/navigation %>
+
+        <div class="w3-section">
+            <div class="w3-container">
+                <h4>Update Student Profile</h4>
+                <hr/>
+                <form class="w3-content" action="" method="post" id="update_student_form">
+                    <div class="w3-section">
+                        <label class="hide">First Name</label>
+                        <input class="w3-input" type="text" name="first_name" value="<%= data.first_name %>" placeholder="First Name"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+                    <div class="w3-section">
+                        <label class="hide">Middle Name</label>
+                        <input class="w3-input" type="text" name="middle_name" value="<%= data.middle_name %>" placeholder="Middle Name"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+                    <div class="w3-section">
+                        <label class="hide">Last Name</label>
+                        <input class="w3-input" type="text" name="last_name" value="<%= data.last_name %>" placeholder="Last Name"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+
+                    <div class="w3-section">
+                        <label class="hide">Age</label>
+                        <input class="w3-input" type="number" name="age" value="<%= data.age %>" placeholder="Age"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+
+                    <div class="w3-section">
+                        <label class="hide">Reg. Number</label>
+                        <input class="w3-input" type="text" name="reg_number" value="<%= data.reg_number %>" placeholder="Reg. Number" readonly/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+                    <div class="w3-section">
+                        <label class="hide">Class (Level)</label>
+                        <input class="w3-input" type="text" name="level" value="<%= data.level %>" placeholder="Class (Level)"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+                    <div class="w3-section">
+                        <label class="hide">Department</label>
+                        <input class="w3-input" type="text" name="department" value="<%= data.department %>" placeholder="department"/>
+                        <div class="info">
+                            <span class="def"></span>
+                            <span class="err"></span>
+                        </div>
+                    </div>
+                    <div class="w3-section w3-right-align">
+                        <button class="w3-btn w3-block w3-green w3-hover-green w3-hover-opacity" type="submit" name="update_profile"><i class="fa fa-sign-in"></i> Update Profile</button>
+                    </div>
+                    <div class="w3-section">
+                        <div class="w3-card-4 w3-white errorBox">
+                            <div class="w3-padding w3-text-red w3-small message"></div>
+                        </div>
+                    </div>
+                </form>
+                <hr />
+                <div class="w3-padding-24 w3-center">
+                    <a href="<%= "/view/" + data.reg_number %>" class="w3-btn w3-blue w3-hover-blue w3-margin-right">View Profile</a>
+                    <a href="/list" class="w3-btn w3-blue w3-hover-blue w3-margin-left">List Students</a>
+                </div>
+            </div>
+        </div>
+        <% include partials/core_scripts %>
+        <script type="text/javascript" src="/assets/js/assets.js.update.js"></script>
+    </body>
+</html>

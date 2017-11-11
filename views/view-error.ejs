@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%= title %></title>
+        <% include partials/core_styles %>
+    </head>
+    <body>
+        <% include partials/navigation %>
+        <div class="w3-container">
+            <div class="w3-content w3-margin-top w3-margin-bottom w3-white" style="max-width: 800px">
+                <h2 class="w3-text-red">Record Not Found</h2>
+                <div class="w3-padding w3-text-grey w3-center">
+                    Student record for the number <span class="w3-text-black w3-larger"><b><%=reg_number %></b></span> does not exist. You can add new student or view available records
+                </div>
+                <div class="w3-padding w3-center">
+                    <a href="/add" class="w3-btn w3-blue w3-hover-blue w3-margin-right">Add New Student</a>
+                    <a href="/list" class="w3-btn w3-blue w3-hover-blue w3-margin-left">List Students</a>
+                </div>
+            </div>
+        </div>
+        <% include partials/core_scripts %>
+    </body>
+</html>
