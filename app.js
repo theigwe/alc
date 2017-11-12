@@ -4,6 +4,7 @@ let constants = require(`${appRoot}/local_modules/constants`);
 
 const path          = require('path');
 const express       = require('express');
+const favicon       = require('serve-favicon');
 const bodyParser    = require('body-parser');
 const assert        = require('assert');
 const request       = require('request');
@@ -28,7 +29,7 @@ let jsonParser = bodyParser.json();
 let urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app.set("view engine", constants.viewEngine);
-
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static("public"));
 
 app.get('/',(req,res)=>{

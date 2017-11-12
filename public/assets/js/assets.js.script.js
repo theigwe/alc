@@ -1,6 +1,6 @@
 $(document).ready(function ()
 {
-    $(function() //Toddle element using id
+    $(function() //toggle element using id
     {
         $('body').on('click','[data-toggle]',function (e) {
             let targ = $(this).data('toggle');
@@ -24,6 +24,12 @@ $(document).ready(function ()
             $(this).next('.info').children('.def').fadeIn(800);
             $(this).parents('form').find('.errorBox').children('.message').fadeOut(1000).html('');
         });
+    });
 
+    $(function () //inver html content to the opposit
+    {
+        $('body').on('click','.inverhtml', function () {
+            $(this).children('span').toggle();
+        })
     })
 });
