@@ -1,5 +1,5 @@
-ALC 2.0 ASSESSMENT API
-======================
+ALC 2.0 ASSESSMENT
+==================
 
 Using this API endpoints, you can create, read, update and delete student records. This is designed for assessment purpose. There is no authentication required to use the endpoints; as this was not designed for production purposes.
 
